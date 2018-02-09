@@ -23,7 +23,7 @@ public class task {
         ArrayList<Pattern> regexWord = new ArrayList<>();
         try {
             String paternLine = arrayOfLines.get(0);
-            Pattern.compile(paternLine);
+            Pattern compile = Pattern.compile(paternLine);
             String[] buffArrayOfPatern =paternLine.split(" ");
             for (String aBuffArrayOfPatern : buffArrayOfPatern) {
                 regexWord.add(Pattern.compile("^" + aBuffArrayOfPatern
