@@ -2,9 +2,7 @@ package com.round2.task1;
 
 import java.lang.reflect.Array;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
+import java.util.regex.*;
 
 public class task {
     public static void main(String[] args){
@@ -29,15 +27,15 @@ public class task {
             String[] buffArrayOfPatern =paternLine.split(" ");
             for (String aBuffArrayOfPatern : buffArrayOfPatern) {
                 regexWord.add(Pattern.compile("^" + aBuffArrayOfPatern
-                        .replace("^", "")
-                        .replace("$", "") + "(;?)$"
+                .replace("^", "")
+                .replace("$", "") + "(;?)$"
                 ));
             }
             for (Pattern patern : regexWord) {
                 finalArray = matchArrayOfLines(patern,arrayOfLines,finalArray);
             }
-        } catch (PatternSyntaxException e) {
-            throw new RuntimeException("Регулярное выражение не валидно");
+        }   catch (PatternSyntaxException e) {
+                throw new RuntimeException("Регулярное выражение не валидно");
         }
         return finalArray;
     }
